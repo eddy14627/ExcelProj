@@ -20,6 +20,7 @@ const FileUploader = () => {
   const handleUpload = async () => {
     if (!selectedFile) {
       alert("Please select a file before uploading.");
+      setUploadStatus(null);
       return;
     }
 
