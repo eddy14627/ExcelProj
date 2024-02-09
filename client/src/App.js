@@ -28,7 +28,7 @@ const FileUploader = () => {
 
     try {
       const response = await axios.post(
-        "http://localhost:3001/importUser",
+        "https://excelproj.onrender.com/importUser",
         formData,
         {
           headers: {
