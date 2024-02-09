@@ -1,10 +1,11 @@
+require("dotenv").config();
 const express = require("express");
 const bodyParser = require("body-parser");
 const mongoose = require("mongoose");
 const cors = require("cors");
 
 const app = express();
-const port = 3001;
+
 const userRoute = require("./Routes/UserRoute");
 
 app.use(bodyParser.json());
@@ -16,12 +17,8 @@ app.get("/", (req, res) => {
 
 app.use("/", userRoute);
 
-mongoose
-  .connect(
-    "mongodb+srv://adjee2020:Adarsh100@excelexportusingcsv.9w9yjic.mongodb.net/testDB"
-  )
-  .then(() => {
-    app.listen(port, () => {
-      console.log(`Server is running on http://localhost:${port}`);
-    });
+mongoose.connect(process.env.MONGO_DB_URI).then(() => {
+  app.listen(process.env.PORT, () => {
+    console.log(`Server is running on http://localhost:${process.env.PORT}`);
   });
+});
