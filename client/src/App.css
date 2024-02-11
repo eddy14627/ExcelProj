@@ -12,11 +12,11 @@
   color: white;
   font-size: 18px;
   margin-bottom: 10px;
-  cursor: pointer; /* Set cursor to pointer */
+  cursor: pointer;
 }
 
 .fileInput {
-  display: none; /* Hide the default file input */
+  display: none;
 }
 
 .uploadButton {

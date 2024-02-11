@@ -1,16 +1,11 @@
 import React, { useState, useEffect } from "react";
 import axios from "axios";
-import "./App.css"; // Import the CSS file
+import "./App.css";
 
 const FileUploader = () => {
   const [selectedFile, setSelectedFile] = useState(null);
   const [uploadStatus, setUploadStatus] = useState(null);
   const [tableData, setTableData] = useState([]);
-
-  useEffect(() => {
-    // Fetch data from the server when the component mounts
-    fetchDataFromServer();
-  }, [uploadStatus]); // Re-fetch data when uploadStatus changes
 
   const fetchDataFromServer = async () => {
     try {
@@ -61,9 +56,8 @@ const FileUploader = () => {
   };
 
   useEffect(() => {
-    // Fetch data from the server when the component mounts
     fetchDataFromServer();
-  }, [uploadStatus]); // Re-fetch data when uploadStatus changes
+  }, [uploadStatus]);
 
   return (
     <div className="container">
